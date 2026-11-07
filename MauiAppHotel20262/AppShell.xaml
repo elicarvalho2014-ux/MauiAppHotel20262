@@ -1,0 +1,13 @@
+<Shell
+    x:Class="MauiAppHotel20262.AppShell"
+    xmlns:local="clr-namespace:MauiAppHotel20262"
+    xmlns:Views="clr-namespace:MauiAppHotel20262.Views"
+    Shell.NavBarIsVisible="False"
+    Title="MauiAppHotel20262">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate Views:ContratacaoHospedagem}"
+        Route="MainPage" />
+
+</Shell>

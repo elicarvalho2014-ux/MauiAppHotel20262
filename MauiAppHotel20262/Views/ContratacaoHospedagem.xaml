@@ -1,0 +1,76 @@
+<ContentPage
+    x:Class="MauiAppHotel20262.Views.ContratacaoHospedagem"
+    Title="ContratacaoHospedagem">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Padding="10"
+                         VerticalOptions="Center">
+                
+        <Label
+            Text="Cálculo da Diária"
+            FontFamily="HennyPennyRegular"
+            TextColor="{StaticResource Primary}"
+            FontSize="30"
+            Margin="0, 50, 0, 50"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+
+        <Border StrokeShape="RoundRectangle 10"
+                BackgroundColor="{StaticResource Gray100}">
+            <VerticalStackLayout Spacing="20"
+                                 Padding="20">
+
+                <Grid ColumnDefinitions="*, *, *"
+                      RowDefinitions="Auto, Auto">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Adultos:" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Source={x:Reference stepperAdultos}, Path=Value}" />
+                    <Stepper x:Name="stepperAdultos" Grid.Row="0" Grid.Column="2" 
+                             Minimum="1" Maximum="5"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Crianças:" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding Source={x:Reference stepperCrianças}, Path=Value}" />
+                    <Stepper x:Name="stepperCrianças" Grid.Row="1" Grid.Column="2" 
+                             Minimum="0" Maximum="5" />
+                </Grid>
+
+                <Label Text="Selecione sua Acomodação:"
+                       HorizontalOptions="Center"
+                       Margin="0, 20, 0, 5" />
+                <Picker x:Name="pickerquarto" />
+                
+                <Border StrokeShape="RoundRectangle 10"
+                        BackgroundColor="{StaticResource Gray200}"
+                        Margin="0, 20, 0, 5">
+
+                    <Grid ColumnDefinitions="*, *"
+                          RowDefinitions="Auto, Auto"
+                          RowSpacing="10"
+                          Padding="10">
+                        
+                        <Label Grid.Row="0" Grid.Column="0" Text="Data Check-In:" />
+                        <DatePicker x:Name="datePickerCheckIn" Grid.Row="0" Grid.Column="1" />
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Data Check-Out:" />
+                        <DatePicker x:Name="datePickerCheckOut" Grid.Row="1" Grid.Column="1" />
+                    
+                    </Grid>
+                </Border>
+            
+                <Button Text="Calcular"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        Margin="0, 20, 0, 0" />
+
+            </VerticalStackLayout>
+        </Border>
+    
+     </VerticalStackLayout>
+
+</ContentPage>

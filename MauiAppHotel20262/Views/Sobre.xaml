@@ -1,0 +1,9 @@
+<ContentPage x:Class="MauiAppHotel20262.Views.Sobre"
+             Title="Sobre">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>
