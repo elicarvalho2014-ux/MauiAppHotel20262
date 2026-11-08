@@ -1,9 +1,64 @@
-<ContentPage x:Class="MauiAppHotel20262.Views.HospedagemContratada"
+<ContentPage 
+            x:Class="MauiAppHotel20262.Views.HospedagemContratada"
              Title="HospedagemContratada">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    
+    <VerticalStackLayout 
+        VerticalOptions="Start"
+        HorizontalOptions="Center">
+
+        <Border StrokeThickness="0"
+                BackgroundColor="Transparent"
+                StrokeShape="RoundRectangle 10">
+            
+            <Image Source="hotel_montanha.png"
+                   Aspect="AspectFill"
+                   HeightRequest="200" />
+        </Border>
+
+        <Label Text="Ótima escolha!! "
+               FontFamily="HennyPenny-Regular"
+               TextColor="Black"
+               FontSize="35"
+               HorizontalOptions="Center"
+               Margin="0, 20, 0, 0"/>
+
+        <Label Text="Confirme a sua reserva: "
+               FontAttributes="Bold"
+               FontFamily="OpenSans-Semibold"
+               TextColor="DarkBlue"
+               FontSize="14"
+               Margin="10, 5, 0, 5"/>
+
+        <Border StrokeShape="RoundRectangle 10" 
+                BackgroundColor="{StaticResource MidnightBlue}"
+                Margin="20">
+            <VerticalStackLayout Spacing="8"
+                                 Padding="10">
+
+                <VerticalStackLayout Spacing="8" Padding="15">
+                    <Label Text="Hospedagem:" FontSize="12" TextColor="White" />
+                    <Label Text="{Binding SuiteEscolhida.Nome}" FontSize="15" TextColor="White" FontAttributes="Bold" />
+
+                    <Label Text="Quantidade de Adulto(s):" FontSize="12" TextColor="White" />
+                    <Label Text="{Binding QuantidadeAdultos}" FontSize="15" TextColor="White" FontAttributes="Bold" />
+
+                    <Label Text="Quantidade de Criança(s):" FontSize="12" TextColor="White" />
+                    <Label Text="{Binding QuantidadeCriancas}" FontSize="15" TextColor="White" FontAttributes="Bold" />
+
+                    <Label Text="Data de Check-in:" FontSize="12" TextColor="White" />
+                    <Label Text="{Binding DataCheckIn, StringFormat='{0:dd/MM/yyyy}'}" FontSize="15" TextColor="White" FontAttributes="Bold" />
+
+                    <Label Text="Data de Check-out:" FontSize="12" TextColor="White" />
+                    <Label Text="{Binding DataCheckOut, StringFormat='{0:dd/MM/yyyy}'}" FontSize="15" TextColor="White" FontAttributes="Bold" />
+
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+        </Border>
+
+
+
     </VerticalStackLayout>
+
 </ContentPage>

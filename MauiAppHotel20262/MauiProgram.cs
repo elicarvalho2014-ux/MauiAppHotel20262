@@ -14,6 +14,7 @@ namespace MauiAppHotel20262
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("HennyPenny-Regular.ttf", "HennyPennyRegular");
+                    fonts.AddFont("Orbitron-VariableFont_wght.ttf", "Orbitron");
                 });
 
 #if DEBUG

@@ -16,7 +16,7 @@
             FontFamily="HennyPennyRegular"
             TextColor="{StaticResource Primary}"
             FontSize="30"
-            Margin="0, 50, 0, 50"
+            Margin="0, 20, 0, 20"
             VerticalOptions="Center"
             HorizontalOptions="Center" />
 
@@ -40,12 +40,14 @@
 
                 <Label Text="Selecione sua Acomodação:"
                        HorizontalOptions="Center"
-                       Margin="0, 20, 0, 5" />
-                <Picker x:Name="pickerquarto" />
+                       Margin="0, 15, 0, 5" />
+                <Picker x:Name="pickerquarto"
+                        ItemDisplayBinding="{Binding Nome}" 
+                        Title="Selecione a sua Suite" />
                 
                 <Border StrokeShape="RoundRectangle 10"
                         BackgroundColor="{StaticResource Gray200}"
-                        Margin="0, 20, 0, 5">
+                        Margin="0, 15, 0, 5">
 
                     <Grid ColumnDefinitions="*, *"
                           RowDefinitions="Auto, Auto"
@@ -53,24 +55,36 @@
                           Padding="10">
                         
                         <Label Grid.Row="0" Grid.Column="0" Text="Data Check-In:" />
-                        <DatePicker x:Name="datePickerCheckIn" Grid.Row="0" Grid.Column="1" />
+                        <DatePicker x:Name="datePickerCheckIn"
+                                    DateSelected="datePickerCheckIn_DateSelected"
+                                    Grid.Row="0"
+                                    Grid.Column="1" />
 
                         <Label Grid.Row="1" Grid.Column="0" Text="Data Check-Out:" />
-                        <DatePicker x:Name="datePickerCheckOut" Grid.Row="1" Grid.Column="1" />
+                        <DatePicker x:Name="datePickerCheckOut"
+                                    DateSelected="datePickerCheckOut_DateSelected"
+                                    Grid.Row="1"
+                                    Grid.Column="1" />
                     
                     </Grid>
                 </Border>
-            
-                <Button Text="Calcular"
-                        BackgroundColor="{StaticResource Primary}"
+
+                <Button Text="Calcular" Clicked="Button_Clicked"
+                        BackgroundColor="{StaticResource DarkGreen}"
                         TextColor="White"
                         FontAttributes="Bold"
                         CornerRadius="10"
-                        Margin="0, 20, 0, 0" />
-
+                        Margin="0, 10, 0, 0" />
+                
             </VerticalStackLayout>
+
         </Border>
-    
-     </VerticalStackLayout>
+
+                <Button Text="Sobre"
+                        HorizontalOptions="Center"
+                        Margin="0, 10, 0, 0"
+                        Clicked="SobreButton_Clicked" />
+
+    </VerticalStackLayout>
 
 </ContentPage>
